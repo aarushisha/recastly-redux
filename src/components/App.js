@@ -14,43 +14,43 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      videos: [],
-      currentVideo: null
-    };
+    // this.state = {
+    //   videos: [],
+    //   currentVideo: null
+    // };
   }
 
   componentDidMount() {
-    this.getYouTubeVideos('react tutorials');
+    this.props.getYouTubeVideos('react tutorials');
   }
 
-  handleVideoListEntryTitleClick(video) {
-    this.setState({currentVideo: video});
-  }
+  // handleVideoListEntryTitleClick(video) {
+  //   this.setState({currentVideo: video});
+  // }
 
-  getYouTubeVideos(query) {
-    var options = {
-      key: this.props.API_KEY,
-      query: query
-    };
+  // getYouTubeVideos(query) {
+  //   var options = {
+  //     key: this.props.API_KEY,
+  //     query: query
+  //   };
 
-    this.props.searchYouTube(options, (videos) =>
-      this.setState({
-        videos: videos,
-        currentVideo: videos[0]
-      })
-    );
-  }
+  //   this.props.searchYouTube(options, (videos) =>
+  //     this.setState({
+  //       videos: videos,
+  //       currentVideo: videos[0]
+  //     })
+  //   );
+  // }
 
-  handleSearchInputChange(query) {
-    // this.props.handleSearchInputChange(e.target.value);
+  // handleSearchInputChange(query) {
+  //   // this.props.handleSearchInputChange(e.target.value);
 
-    this.getYouTubeVideos(query);
+  //   this.getYouTubeVideos(query);
 
-    // this.setState({
-    //   value: e.target.value
-    // });
-  }
+  //   // this.setState({
+  //   //   value: e.target.value
+  //   // });
+  // }
 
   //TODO: swap out the React components below for the container components
   //  you wrote in the 'containers' directory.
@@ -59,18 +59,15 @@ export default class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 col-md-offset-3">
-            <Search handleSearchInputChange={this.handleSearchInputChange.bind(this)}/>
+            <SearchContainer />
           </div>
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={this.state.currentVideo}/>
+            <VideoPlayerContainer />
           </div>
           <div className="col-md-5">
-            <VideoList
-              handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick.bind(this)}
-              videos={this.state.videos}
-            />
+            <VideoListContainer />
           </div>
         </div>
       </div>
