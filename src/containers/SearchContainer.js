@@ -9,14 +9,6 @@ var mapDispatchToProps = (dispatch) => {
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onTodoClick: id => {
-//       dispatch(toggleTodo(id))
-//     }
-//   }
-// }
-
 var SearchContainer = connect(
   null,
   mapDispatchToProps

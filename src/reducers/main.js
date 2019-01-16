@@ -10,12 +10,4 @@ var rootReducer = combineReducers({videoList,currentVideo});
 //  app into a single reducer using the 'combineReducers' method
 //  listed above.
 
-/*
-const rootReducer = combineReducers({
-  defaultState, // key name same as the carefully renamed default export
-  firstState: firstNamedReducer, // specific key name instead of the variable name
-  secondState // key name same as the carefully renamed named export
-})
-*/
-
 export default rootReducer;

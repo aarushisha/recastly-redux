@@ -5,13 +5,6 @@ class Search extends React.Component {
     super(props);
   }
 
-  // handleInputChange(e) {
-  //   this.props.handleSearchInputChange(e.target.value);
-  //   this.setState({
-  //     value: e.target.value
-  //   });
-  // }
-
   render() {
     return (
       <div className="search-bar form-inline">
